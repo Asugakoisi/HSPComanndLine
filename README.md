@@ -1,0 +1,2 @@
+# HSPComanndLine
+HSPのコマンドラインインターフェース。hspcのパクリ。
