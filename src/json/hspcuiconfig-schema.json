@@ -9,6 +9,9 @@
     "ver"
   ],
   "properties": {
+    "$schema": {
+      "type": "string"
+    },
     "ver": {
       "$ref": "./hspcui-schema.json#/properties/ver"
     },

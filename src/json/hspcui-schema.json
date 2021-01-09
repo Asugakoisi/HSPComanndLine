@@ -10,6 +10,9 @@
     "ver"
   ],
   "properties": {
+    "$schema": {
+      "type": "string"
+    },
     "ver": {
       "$id": "#/properties/ver",
       "type": "string",
