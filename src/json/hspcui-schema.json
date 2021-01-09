@@ -31,7 +31,7 @@
       "description": "このファイルが適用される時の言語",
       "default": "ja",
       "minLength": 2,
-      "pattern": "^[a-z]{2,}-[A-Z]{2,}$"
+      "pattern": "^[a-z]{2,}$"
     },
     "options": {
       "$id": "#/properties/options",

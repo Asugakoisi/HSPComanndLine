@@ -1,0 +1,4 @@
+﻿About the --tempo = option
+This option applies when the --temp --temp = --tempa = option is used.
+The --temp --temp = option changes the directory name when copying to the current directory, and the --tempa = option changes the directory name when copying to the template directory.
+In other words, if you set "--temp = test --tempo = test_copy", the contents of "template \ test" will be copied to "current directory \ test_copy", and you can say "--tempa = test --tempo = test_copy". If so, the contents of "current directory \ test" will be copied to "template \ test_copy".

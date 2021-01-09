@@ -1,0 +1,2 @@
+﻿--lang= Option conflict
+The --lang = option specified in the profile is ignored for the convenience of processing the --profile = option.
