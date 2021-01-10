@@ -27,7 +27,14 @@ HSPディレクトリ\ja:
 # 使い方
 こいつには残念ながら`-CPmD`とか`command`を理解できる能力はないので、一個づつ`-C -P -m -D`と入力してください。  
 基本的に、hspc と hspcmp.exe のオプションに対応しております。  
-コマンドの説明は `hspc --help --ls`を参照してください。  
+コマンドの説明は `hspc --help --ls`を参照してください。 
+
+# 履歴
+01/11 Version 0.1.1.0 公開  
+- `--version`、`--license` オプションの追加  
+- `--version`、`--license` オプションのヘルプ追加  
+
+01/10 Version 0.1.0.0 公開  
 
 # こっちもみてね
 [hspc の公開ページ](http://dev.onionsoft.net/seed/info.ax?id=1392)  
