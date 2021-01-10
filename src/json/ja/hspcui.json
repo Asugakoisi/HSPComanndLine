@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcui-schema.json",
-  "ver": "0.1.0.0-0.1.0.0",
+  "ver": "0.1.0.0-0.1.1.0",
   "lang": "ja",
   "options": [
     {
@@ -8,7 +8,7 @@
       "name": "help",
       "desctription": "指定したオプションの詳細を表示します。",
       "example": "hspcui --help a\\nhspcui --help syspath=\\n--syspath=\"C:\\hsp351\" hspcui --help a",
-      "note": "--syspath=, -E, --lang= オプションを利用したい場合は、このオプションの前に指定します。"
+      "note": "--syspath=, -E, --lang= オプションを利用したい場合は、このオプションの前に指定します。\\n調べたいオプションに - をつけてはいけません。実行される恐れがあります。"
     },
     {
       "id": 1,
@@ -247,6 +247,20 @@
       "desctription": "profile-desctription.txt",
       "example": "profile-example.txt",
       "note": "profile-note.txt"
+    },
+    {
+      "id": 35,
+      "name": "version",
+      "desctription": "hspcui のバージョンを表示します。",
+      "example": "hspcui --version",
+      "note": "他のオプションとの併用はできません。"
+    },
+    {
+      "id": 36,
+      "name": "license",
+      "desctription": "hspcui のライセンスを表示します。",
+      "example": "hspcui --license",
+      "note": "他のオプションとの併用はできません。"
     }
   ]
 }
