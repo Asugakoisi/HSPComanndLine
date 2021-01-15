@@ -29,9 +29,30 @@ HSPディレクトリ\ja:
 # 使い方
 こいつには残念ながら`-CPmD`とか`command`を理解できる能力はないので、一個づつ`-C -P -m -D`と入力してください。  
 基本的に、hspc と hspcmp.exe のオプションに対応しております。  
-コマンドの説明は `hspc --help --ls`を参照してください。 
+コマンドの説明は `hspc --help --ls`を参照してください。  
+
+# AssemblyInfo.hsp 作成機能
+この機能は hspcui 独自の機能です。  
+この機能により、`-o`,`--outname`オプションを使用して作成する自動実行ファイル名を指定できるようになりました。  
+また、ランタイム(`hsp3utf`、`hsp3_64`)を指定することができるようになりました。
+そのために、`-a`,`-i` オプションでソースコードが`UTF-8`ときにはランタイムが自動的に`hsp3utf`になります。   
+  
+実際は適宜以下のマクロを`AssemblyInfo.hsp`に追加して、ソースファイルの一行目に`#include "AssemblyInfo.hsp"`を追加しているだけです。  
+```HSP
+#include "hsp3utf.as"
+#include "hsp3_64.as"
+#packopt name "ファイル名"
+```  
+
+もちろん、ソースコード側での指定が優先されます。  
 
 # 履歴
+01/16 Version 0.2.0.0 公開  
+- `--platform=` オプションの追加  
+- AssemblyInfo.hsp を作成する機能の追加  
+- 上記の機能の追加による `-o`,`--outname=`,`-a`,`-i` オプションの動作変更  
+- `--help --ls` オプションで表示される情報を減らしました。  
+
 01/11 Version 0.1.1.0 公開  
 - `--version`、`--license` オプションの追加  
 - `--version`、`--license` オプションのヘルプ追加  

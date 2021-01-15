@@ -1,21 +1,21 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcui-schema.json",
-  "ver": "0.1.0.0-0.1.1.0",
+  "ver": "0.2.0.0-0.2.0.0",
   "lang": "ja",
   "options": [
     {
       "id": 0,
       "name": "help",
       "desctription": "指定したオプションの詳細を表示します。",
-      "example": "hspcui --help a\\nhspcui --help syspath=\\n--syspath=\"C:\\hsp351\" hspcui --help a",
-      "note": "--syspath=, -E, --lang= オプションを利用したい場合は、このオプションの前に指定します。\\n調べたいオプションに - をつけてはいけません。実行される恐れがあります。"
+      "example": "hspcui --help a\nhspcui --help syspath=\n--syspath=\"C:\\hsp351\" hspcui --help a",
+      "note": "--syspath=, -E, --lang= オプションを利用したい場合は、このオプションの前に指定します。\n調べたいオプションに - をつけてはいけません。実行される恐れがあります。"
     },
     {
       "id": 1,
       "name": "a",
       "desctription": "ソースコードの文字コードを自動判別します。",
       "example": "hspcui -a source.hsp",
-      "note": ""
+      "note": "文字コードが utf-8 なら、AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。"
     },
     {
       "id": 2,
@@ -57,7 +57,7 @@
       "name": "i",
       "desctription": "ソースファイルが utf-8 であることを示します。",
       "example": "hspcui -i source.hsp",
-      "note": "ソースコードの文字コードがわからないときは -a オプションを使用してください。"
+      "note": "ソースコードの文字コードがわからないときは -a オプションを使用してください。\nAssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。"
     },
     {
       "id": 8,
@@ -78,14 +78,14 @@
       "name": "o",
       "desctription": "出力するオブジェクトファイル(.ax)か strmap の名前を指定します。",
       "example": "hspcui -a -oexample.ax source.hsp",
-      "note": "自動実行ファイル名を指定する際は、従来通りソースコード側で指定してください。"
+      "note": "AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。"
     },
     {
       "id": 11,
       "name": "outname=",
       "desctription": "出力するオブジェクトファイル(.ax)か strmap の名前を指定します。",
       "example": "hspcui -a --outname=example.ax source.hsp",
-      "note": "自動実行ファイル名を指定する際は、従来通りソースコード側で指定してください。"
+      "note": "AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。"
     },
     {
       "id": 12,
@@ -97,21 +97,21 @@
     {
       "id": 13,
       "name": "P",
-      "desctription": "packfile を指定されたソースコードから作成します。\\n-D オプションを使用することで削除できます。",
+      "desctription": "packfile を指定されたソースコードから作成します。\n-D オプションを使用することで削除できます。",
       "example": "hspcui -a -P -m -D source.hsp",
       "note": ""
     },
     {
       "id": 14,
       "name": "r",
-      "desctription": "指定されたソースファイルの実行をし、終了コードを出力します。\\nまた、-mオプション指定時にはコンパイルした自動実行ファイルを実行します。",
+      "desctription": "指定されたソースファイルの実行をし、終了コードを出力します。\nまた、-mオプション指定時にはコンパイルした自動実行ファイルを実行します。",
       "example": "hspcui -a -r source.hsp",
       "note": ""
     },
     {
       "id": 15,
       "name": "r=",
-      "desctription": "指定されたソースファイルを指定された引数を与えて実行し、終了コードを出力します。\\nまた、コンパイル時にはその成果物を実行します。",
+      "desctription": "指定されたソースファイルを指定された引数を与えて実行し、終了コードを出力します。\nまた、コンパイル時にはその成果物を実行します。",
       "example": "hspcui -a -r=1 source.hsp",
       "note": ""
     },
@@ -127,7 +127,7 @@
       "name": "s",
       "desctription": "指定されたソースファイルから strmap を作成します",
       "example": "hspcui -a -s -u source.hsp",
-      "note": "-d オプションは無効化されて実行されます。\\nHSP 3.6β2 以上のhspcmp.dllが必要です。"
+      "note": "-d オプションは無効化されて実行されます。\nHSP 3.6β2 以上のhspcmp.dllが必要です。"
     },
     {
       "id": 18,
@@ -230,9 +230,9 @@
     {
       "id": 32,
       "name": "lang=",
-      "desctription": "実行時の言語を指定します。指定できる言語は ja か en です。\\nまた、デフォルトの言語は ja です。",
-      "example": "hspcui --lang=en -a source.hsp\\nhspcui --lang=en --help -a",
-      "note": "このオプションは一番最初に指定される必要があります。\\nこのオプションに関して、-E オプションは機能しません。"
+      "desctription": "実行時の言語を指定します。指定できる言語は ja か en です。\nまた、デフォルトの言語は ja です。",
+      "example": "hspcui --lang=en -a source.hsp\nhspcui --lang=en --help -a",
+      "note": "このオプションは一番最初に指定される必要があります。\nこのオプションに関して、-E オプションは機能しません。"
     },
     {
       "id": 33,
@@ -261,6 +261,13 @@
       "desctription": "hspcui のライセンスを表示します。",
       "example": "hspcui --license",
       "note": "他のオプションとの併用はできません。"
+    },
+    {
+      "id": 37,
+      "name": "platform=",
+      "desctription": "プラットフォームを指定します。\n指定できるのは x86 か x64 の二つです。",
+      "example": "hspcui --platform=x64 source.hsp",
+      "note": "AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。"
     }
   ]
 }
