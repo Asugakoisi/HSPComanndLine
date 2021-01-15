@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "hspcui/0.2.0.0": {
+      "hspcui/0.2.1.0": {
         "dependencies": {
           "Microsoft.Win32.Registry": "5.0.0"
         },
@@ -36,7 +36,7 @@
     }
   },
   "libraries": {
-    "hspcui/0.2.0.0": {
+    "hspcui/0.2.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
