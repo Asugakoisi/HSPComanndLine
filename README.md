@@ -2,7 +2,7 @@
 HSPのコマンドラインインターフェース。hspcのパクリ。
 
 # やること
-[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.1.1.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
+[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.2.1.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
 以下の3ステップをやる。  
 1. src\json\ja ディレクトリを丸ごとHSPシステムフォルダにコピーする。
 2. src\json\en の中身を src\bin\en にコピーする
