@@ -60,6 +60,7 @@ hspc.exeがあるディレクトリ上に templates ディレクトリ が存在
   "profiles": [
     {
       "id": 0,
+      "name": "Build",
       "commands": [
         "-P",
         "-m",
@@ -73,6 +74,7 @@ hspc.exeがあるディレクトリ上に templates ディレクトリ が存在
 この時、  
 ```cmd
 hspcui --profile=0 source.hsp
+hspcui --profile=Build source.hsp
 ```
 は  
 ```cmd
@@ -125,11 +127,13 @@ hspcui -P -m -C -D source.hsp
 | --compath= | common フォルダを指定します。 |
 | --lang= | 実行時の言語を指定します。指定できる言語は ja か en です。| 
 | --license | hspcui のライセンスを表示します。 |
+| --notasminfo | AssemblyInfo.hsp ファイルを生成しません。 |
 | --online | -h オプションの検索時にオンラインで検索します。 |
 | --outname= | 出力するオブジェクトファイル(.ax)か strmap の名前を指定します。 |
 | --platform= | プラットフォームを指定します。指定できるのは x86 か x64 の二つです。|
 | --profile= | 指定したプロファイルを実行します。 |
 | --rtmpath= | runtime フォルダを指定します。 |
+| --see | hspcui で指定したオプションを表示します。 |
 | --syspath= | HSPシステムフォルダを指定します。 |
 | --temp | templates\default ディレクトリをカレントディレクトリにコピーします。 |
 | --temp= | 指定されたテンプレートディレクトリをカレントディレクトリにコピーします。 |
@@ -141,6 +145,12 @@ hspcui -P -m -C -D source.hsp
 
 
 # 履歴
+01/20 Version 0.3.0.0 公開  
+- `--profile=`オプションでプロファイル名が指定できるようになりました
+- `--see`オプションで hspcui に指定したオプションが出力されます
+  - `--profile=`オプションと併用することで指定したプロファイルのコマンドを表示することができます
+- `--notasminfo` オプションで`AssemblyInfo.hsp`を作成しないようにできます
+
 01/16 Version 0.2.1.0 公開
 - `--profile=`オプションで`--platform=x64`を指定して、そのあと`--platform=x86`を指定しても変更されない  
 - `AssemblyInfo.hsp` が作成されないことがある  
