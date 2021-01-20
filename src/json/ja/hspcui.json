@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcui-schema.json",
-  "ver": "0.2.0.0-0.2.1.0",
+  "ver": "0.2.0.0-0.3.0.0",
   "lang": "ja",
   "options": [
     {
@@ -41,14 +41,14 @@
     {
       "id": 5,
       "name": "D",
-      "desctription": "コンパイルの成果物のうち、自動実行ファイル以外を削除します。",
+      "desctription": "コンパイルの成果物のうち、AssemblyInfo.hsp と自動実行ファイル以外を削除します。",
       "example": "hspcui -a -P -m -D source.hsp",
       "note": ""
     },
     {
       "id": 6,
       "name": "E",
-      "desctription": "hspcui 内で発生したエラーを無視して実行を続けます",
+      "desctription": "hspcui 内で発生したエラーを無視して実行を続けます。",
       "example": "hspcui -a -E source .hsp",
       "note": "このオプションの使用はとても危険です。使用しないことを勧めます。"
     },
@@ -111,7 +111,7 @@
     {
       "id": 15,
       "name": "r=",
-      "desctription": "指定されたソースファイルを指定された引数を与えて実行し、終了コードを出力します。\nまた、コンパイル時にはその成果物を実行します。",
+      "desctription": "指定されたソースファイルを指定された引数を与えて実行し、終了コードを出力します。\nまた、-mオプション指定時にはコンパイルした自動実行ファイルを実行します。",
       "example": "hspcui -a -r=1 source.hsp",
       "note": ""
     },
@@ -125,7 +125,7 @@
     {
       "id": 17,
       "name": "s",
-      "desctription": "指定されたソースファイルから strmap を作成します",
+      "desctription": "指定されたソースファイルから strmap を作成します。",
       "example": "hspcui -a -s -u source.hsp",
       "note": "-d オプションは無効化されて実行されます。\nHSP 3.6β2 以上のhspcmp.dllが必要です。"
     },
@@ -268,6 +268,20 @@
       "desctription": "プラットフォームを指定します。\n指定できるのは x86 か x64 の二つです。",
       "example": "hspcui --platform=x64 source.hsp",
       "note": "AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。"
+    },
+    {
+      "id": 38,
+      "name": "see",
+      "desctription": "hspcui で指定したオプションを表示します。",
+      "example": "hspcui --profile=0 --see",
+      "note": ""
+    },
+    {
+      "id": 39,
+      "name": "notasminfo",
+      "desctription": "AssemblyInfo.hsp ファイルを生成しません。",
+      "example": "hspcui --platform=x64 --notasminfo source.hsp",
+      "note": ""
     }
   ]
 }

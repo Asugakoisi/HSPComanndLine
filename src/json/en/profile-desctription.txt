@@ -9,8 +9,11 @@ How to write hspcuiconfig.json
 |-"ver"      ……  The version of hspcui that this profile corresponds to. It is in the format of "min_ver-max_ver".
 |-"profiles" ……  Array of profiles
    |-"id"       ……  Profile ID
+   |-"name"     ……  Profile name. You can be specified instead of the profile ID.
    |-"commands" ……  Specify the options you want to omit here one by one.
-   |-"name"     ……  Profile name (in the future you will be able to specify this name instead of the profile ID)
 
 --profile= Optional handling
 If this option is specified, it will fetch the specified profile from hspcuiconfig.json and expand it to the beginning of the specified option.
+
+--see option
+You can use this option to view profile options.

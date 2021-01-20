@@ -1,7 +1,8 @@
 ﻿Template function
 This is a utility feature that makes it easy to duplicate directories and files that are often used in development.
 If the templates directory exists on the directory where hspcui.exe is located, the directories in it will be recognized as the template source.
-オプション一覧
+
+Option list
 --temp     Copy the templates\\default directory to the current directory.
 --temp=    Copies the specified template directory to the current directory.
 --tempd    Delete the templates\\default directory.
