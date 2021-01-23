@@ -1,6 +1,6 @@
 # HSPComanndLine
 HSPのコマンドラインインターフェース。hspcのパクリ。  
-**HSP Dish のコンパイルはできません。従来通りHSPエディタからコンパイルしてください。**
+**HSP Dish や AHT のコンパイルはできません。従来通りHSPエディタからコンパイルしてください。**
 
 # やること
 [Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.2.1.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
