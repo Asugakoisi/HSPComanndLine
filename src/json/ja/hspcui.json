@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcui-schema.json",
-  "ver": "0.2.0.0-0.3.0.0",
+  "ver": "0.2.0.0-0.4.0.0",
   "lang": "ja",
   "options": [
     {
@@ -282,6 +282,20 @@
       "desctription": "AssemblyInfo.hsp ファイルを生成しません。",
       "example": "hspcui --platform=x64 --notasminfo source.hsp",
       "note": ""
+    },
+    {
+      "id": 40,
+      "name": "nologo",
+      "desctription": "著作権情報を表示しません。",
+      "example": "hspcui --nologo -a source.hsp",
+      "note": ""
+    },
+    {
+      "id": 41,
+      "name": "oldcmpmes",
+      "desctription": "従来通りのコンパイルメッセージを表示します。",
+      "example": "hspcui --oldcmpmes -a source.hsp",
+      "note": "表示されていないエラーがあると思われる場合にのみ利用してください。"
     }
   ]
 }

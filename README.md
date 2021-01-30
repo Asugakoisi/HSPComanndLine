@@ -3,13 +3,12 @@ HSPのコマンドラインインターフェース。hspcのパクリ。
 **HSP Dish や AHT のコンパイルはできません。従来通りHSPエディタからコンパイルしてください。**
 
 # やること
-[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.2.1.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
-以下の3ステップをやる。  
-1. src\json\ja ディレクトリを丸ごとHSPシステムフォルダにコピーする。
-2. src\json\en の中身を src\bin\en にコピーする
-3. src\binディレクトリの中身を全てHSPシステムフォルダにコピーする。
+[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.4.0.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
+以下の二つのことをしてください。  
+1. src\json\ja と src\json\en ディレクトリを丸ごとHSPシステムフォルダにコピーする。
+2. src\bin ディレクトリの中身を全てHSPシステムフォルダにコピーする。
   
-つまり、こうなっていればいい。  
+つまり、こうなっていればいいです。  
 HSPディレクトリ:  
 ![HSPディレクトリのスクショ1](docs/img/hspdirectory1.png)  
 ![HSPディレクトリのスクショ2](docs/img/hspdirectory2.png)  
@@ -20,14 +19,14 @@ HSPディレクトリ\en:
 HSPディレクトリ\ja:  
 ![HSPディレクトリ\jaのスクショ](docs/img/hspdirectory_ja.png)  
 
-ヘルプ機能も英語も表示しないって人は `ja`と`en`ディレクトリはいりません。  
+ヘルプ機能を使わない人は `ja`と`en`ディレクトリはいりません。  
 
 # 注意
-これを使うには、[HSP3.6β4](https://www.onionsoft.net/wp/archives/3274)以降が必要です。(strmap機能を使うため。)  
+hspcui を使うには、[HSP3.6β4](https://www.onionsoft.net/wp/archives/3274)以降が必要です。(strmap機能を使うため。)  
 
 # 英語モード(--lang=en)について
 ここで表示される英語は正しいものとは限りません。  
-修正案があればIssuesで報告してください。  
+修正案があれば [Issues](https://github.com/Asugakoisi/HSPComanndLine/issues) で報告してください。  
 
 # 使い方
 こいつには残念ながら`-CPmD`とか`command`を理解できる能力はないので、一個づつ`-C -P -m -D`と入力してください。  
@@ -51,12 +50,12 @@ hspc.exeがあるディレクトリ上に templates ディレクトリ が存在
 # プロファイル機能  
 この機能は hspcui 独自の機能です。  
 よく使うオプションをこの機能を使うことで省略することができます。  
-プロファイルは、ユーザーファルダにある hspcuiconfig.json に登録できます。  
+プロファイルは、ユーザーファルダ(例えば、`C:\Users\Asugakoisi`)にある hspcuiconfig.json に登録できます。  
 例）hspcuiconfig.json  
 ```JSON
 {
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcuiconfig-schema.json",
-  "ver": "0.1.0.0-0.1.0.0",
+  "ver": "0.1.0.0-0.4.0.0",
   "profiles": [
     {
       "id": 0,
@@ -127,7 +126,9 @@ hspcui -P -m -C -D source.hsp
 | --compath= | common フォルダを指定します。 |
 | --lang= | 実行時の言語を指定します。指定できる言語は ja か en です。| 
 | --license | hspcui のライセンスを表示します。 |
+| --nologo | 著作権情報を表示しません。 |
 | --notasminfo | AssemblyInfo.hsp ファイルを生成しません。 |
+| --oldcmpmes | 従来通りのコンパイルメッセージを表示します。 |
 | --online | -h オプションの検索時にオンラインで検索します。 |
 | --outname= | 出力するオブジェクトファイル(.ax)か strmap の名前を指定します。 |
 | --platform= | プラットフォームを指定します。指定できるのは x86 か x64 の二つです。|
@@ -145,6 +146,11 @@ hspcui -P -m -C -D source.hsp
 
 
 # 履歴
+01/31 Version 0.4.0.0 公開  
+- コンパイラメッセージが MSBuild 風になりました。
+- `--nologo`オプションでコンパイラの著作権情報を非表示にできます
+- `--oldcmpmes`オプションでコンパイラメッセージの表示を従来のものにできます
+
 01/20 Version 0.3.0.0 公開  
 - `--profile=`オプションでプロファイル名が指定できるようになりました
 - `--see`オプションで hspcui に指定したオプションが出力されます
