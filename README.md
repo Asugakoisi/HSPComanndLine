@@ -3,7 +3,7 @@ HSPのコマンドラインインターフェース。hspcのパクリ。
 **HSP Dish や AHT のコンパイルはできません。従来通りHSPエディタからコンパイルしてください。**
 
 # やること
-[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.4.0.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
+[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.5.0.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
 以下の二つのことをしてください。  
 1. src\json\ja と src\json\en ディレクトリを丸ごとHSPシステムフォルダにコピーする。
 2. src\bin ディレクトリの中身を全てHSPシステムフォルダにコピーする。
@@ -55,7 +55,7 @@ hspc.exeがあるディレクトリ上に templates ディレクトリ が存在
 ```JSON
 {
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcuiconfig-schema.json",
-  "ver": "0.1.0.0-0.4.0.0",
+  "ver": "0.1.0.0-0.5.0.0",
   "profiles": [
     {
       "id": 0,
@@ -81,7 +81,6 @@ hspcui -P -m -C -D source.hsp
 ```
 と同じになります。  
 
-
 # AssemblyInfo.hsp 作成機能(プレリリース)
 **この機能は予告なく変更される恐れがあります。**  
 この機能は hspcui 独自の機能です。  
@@ -97,6 +96,45 @@ hspcui -P -m -C -D source.hsp
 ```  
 もちろん、ソースコード側での指定が優先されます。  
 
+# HSPCタスク  
+MSBuildでこのタスクを使うとHSPスクリプトファイルのコンパイルができるようになります。  
+また使用する際は、`HSPC.dll`と`hspcmp.dll`を同じディレクトリに配置してください。  
+  
+例）sample.hspproj
+```xml
+<Project DefaultTargets="Build"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         ToolsVersion="16">
+  <PropertyGroup>
+    <HSPPath>C:\hsp36beta</HSPPath>
+  </PropertyGroup>
+  <UsingTask TaskName="HSPC.Hspc" AssemblyFile="$(HSPPath)\HSPC.dll" Architecture="x86"/>
+  <ItemGroup>
+    <Compile Include="source.hsp"/>
+  </ItemGroup>
+  <Target Name="Build">
+    <Hspc SourceFile="$(Compile)" SystemDirectory="$(HSPPath)"/>
+  </Target>
+</Project>
+```  
+  
+Hspcタスクの属性一覧  
+| 属性名 | 型 | デフォルト | 説明 |  
+| :----: | :----: | :----: | ---- |
+| AddDegugInfo | bool | false | デバッグ情報を付与してコンパイルします。 |
+| AsHSP26 | bool | false | HSP ver2.6 としてコンパイルします。 |
+| CommonDirectory | string | string.Empty | common フォルダを指定します。 |
+| CreateAssmblyInfo | bool | true | AssemblyInfo.hsp ファイルを生成するかどうか。 |
+| DeleteFiles | bool | false | コンパイル成果物の内、AssemblyInfo.hsp と自動実行ファイル以外を削除します。 |
+| MakeExe | bool | false | 自動実行ファイルを作成します。(packfile は自動生成されます) |
+| Nologo | bool | false | 著作権情報を表示しません。 |
+| OnDebugWindow | bool | false | デバッグウインドウ表示フラグを設定します。 |
+| Output | string | string.Empty | コンパイルした出力するファイル名を指定します。 |
+| Platform | string | x86 | プラットフォームを指定します。指定できるのは x86 か x64 の二つです。 |
+| RuntimeDirectory | string | string.Empty | runtime フォルダを指定します。 |
+| SourceFile | string | null | 必須項目。コンパイルするファイルを指定します。 |
+| SystemDirectory | string | null | 必須項目。HSPシステムフォルダを指定します。 |
+
 # オプション一覧  
 一文字オプション  
 | オプション | 説明 |
@@ -111,7 +149,7 @@ hspcui -P -m -C -D source.hsp
 | -i | ソースファイルが utf-8 であることを示します。 |
 | -j | ソースファイルが shift_jis であることを示します。 |
 | -m | 自動実行ファイルを作成します。 |
-| -o??? | 出力するオブジェクトファイル(.ax)か strmap の名前を指定します。 |
+| -o??? | コンパイルした出力するファイル名を指定します。 |
 | -p | プリプロセスのみを行います。 |
 | -P | packfile を指定されたソースコードから作成します。<br>-D オプションを使用することで削除できます。 |
 | -r | 指定されたソースファイルの実行をし、終了コードを出力します。<br>また、-mオプション指定時にはコンパイルした自動実行ファイルを実行します。 |
@@ -130,8 +168,8 @@ hspcui -P -m -C -D source.hsp
 | --notasminfo | AssemblyInfo.hsp ファイルを生成しません。 |
 | --oldcmpmes | 従来通りのコンパイルメッセージを表示します。 |
 | --online | -h オプションの検索時にオンラインで検索します。 |
-| --outname= | 出力するオブジェクトファイル(.ax)か strmap の名前を指定します。 |
-| --platform= | プラットフォームを指定します。指定できるのは x86 か x64 の二つです。|
+| --outname= | コンパイルした出力するファイル名を指定します。 |
+| --platform= | プラットフォームを指定します。指定できるのは x86 か x64 の二つです。 |
 | --profile= | 指定したプロファイルを実行します。 |
 | --rtmpath= | runtime フォルダを指定します。 |
 | --see | hspcui で指定したオプションを表示します。 |
@@ -146,6 +184,9 @@ hspcui -P -m -C -D source.hsp
 
 
 # 履歴
+02/12 Version 0.5.0.0 公開  
+- MSBuildでのHSPコンパイルタスクの`HSPC.dll`が公開されました。  
+
 01/31 Version 0.4.0.0 公開  
 - コンパイラメッセージが MSBuild 風になりました。
 - `--nologo`オプションでコンパイラの著作権情報を非表示にできます
