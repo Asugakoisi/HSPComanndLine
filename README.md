@@ -23,7 +23,7 @@ HSPディレクトリ\ja:
 ヘルプ機能を使わない人は `ja`と`en`ディレクトリはいりません。  
 
 # 注意
-hspcui を使うには、[HSP3.6β4](https://www.onionsoft.net/wp/archives/3274)以降が必要です。(strmap機能を使うため。)  
+hspcui を使うには、[HSP3.6β4](https://www.onionsoft.net/wp/archives/3274)以降が必要です。(strmap機能対応のため。)  
 
 # 英語モード(--lang=en)について
 ここで表示される英語は正しいものとは限りません。  
@@ -31,10 +31,21 @@ hspcui を使うには、[HSP3.6β4](https://www.onionsoft.net/wp/archives/3274)
 
 # 使い方
 こいつには残念ながら`-CPmD`とか`command`を理解できる能力はないので、一個づつ`-C -P -m -D`と入力してください。  
-基本的に、hspc と hspcmp.exe のオプションに対応しております。  
+基本的に、hspc と hspcmp.exe のオプションに対応しています。  
 コマンドの説明は `hspcui --help --ls`を参照してください。  
 
-# テンプレート機能  
+# ヘルプ機能
+オプションの説明や使用例を見ることができます。  
+`hspcui --help 調べるオプション`とすることで検索できます。  
+ただし、`調べるオプション`にはハイフンや`???`はいりませんが、オプションに`=`が含まれるものは`=`の省略はできません。  
+例)
+```cmd
+hspcui --help a
+hspcui --help o
+hspcui --help profile=
+```
+
+# テンプレート機能
 これは開発でよく使うディレクトリ＆ファイルを簡単に複製できるようになるユーリティ機能です。  
 hspc.exeがあるディレクトリ上に templates ディレクトリ が存在すれば、その中のディレクトリ達をテンプレート元として認識します。  
   
@@ -86,8 +97,8 @@ hspcui -P -m -C -D source.hsp
 **この機能は予告なく変更される恐れがあります。**  
 この機能は hspcui 独自の機能です。  
 この機能により、`-o`,`--outname`オプションを使用して、作成する自動実行ファイル名を指定できるようになりました。  
-また、ランタイム(`hsp3utf`、`hsp3_64`)を指定することができるようになりました。
-そのために、`-a`,`-i` オプションでソースコードが`UTF-8`ときにはランタイムが自動的に`hsp3utf`になります。   
+また、`-a`,`-i` オプションでソースコードが`UTF-8`ときにはランタイムが自動的に`hsp3utf`になるようになります。  
+さらに、`--platform=`オプションを指定することで 64bit か 32bit アプリケーションであるかを指定できます。  
   
 実際は適宜以下のマクロを`AssemblyInfo.hsp`に追加して、ソースファイルの一行目に`#include "AssemblyInfo.hsp"`を追加しているだけです。  
 ```HSP
@@ -96,6 +107,11 @@ hspcui -P -m -C -D source.hsp
 #packopt name "ファイル名"
 ```  
 もちろん、ソースコード側での指定が優先されます。  
+
+## `--notasminfo`オプションについて
+このオプションを指定することで AssemblyInfo.hsp を作成しないようにできます。  
+ただし、自動実行ファイル名を指定できませんし、`--platform=`オプションは無効化されます。  
+また、ソースコードが`UTF-8`の場合はソースコード側で`hsp3utf`ランタイムの指定を忘れないでください。  
 
 # HSPCタスク  
 MSBuildでこのタスクを使うとHSPスクリプトファイルのコンパイルができるようになります。  
@@ -135,6 +151,8 @@ Hspcタスクの属性一覧
 | RuntimeDirectory | string | string.Empty | runtime フォルダを指定します。 |
 | SourceFile | string | null | 必須項目。コンパイルするファイルを指定します。 |
 | SystemDirectory | string | null | 必須項目。HSPシステムフォルダを指定します。 |
+
+カスタムタスクの作成については[タスクの作成](https://docs.microsoft.com/ja-jp/visualstudio/msbuild/task-writing?view=vs-2019)を見てください。  
 
 # オプション一覧  
 一文字オプション  
@@ -218,3 +236,4 @@ Hspcタスクの属性一覧
 # こっちもみてね
 [hspc の公開ページ](http://dev.onionsoft.net/seed/info.ax?id=1392)  
 [HSP 公式サイト](http://hsp.tv/index2.html)
+[MSBuild](https://docs.microsoft.com/ja-jp/visualstudio/msbuild/msbuild?view=vs-2019)
