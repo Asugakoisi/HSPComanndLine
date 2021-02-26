@@ -3,7 +3,7 @@ HSPのコマンドラインインターフェース。hspcのパクリ。
 **HSP Dish や AHT のコンパイルはできません。従来通りHSPエディタからコンパイルしてください。**
 
 # やること
-[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.5.0.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
+[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.5.1.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
 以下の二つのことをしてください。  
 1. `src\json\ja`と`src\json\en`ディレクトリを丸ごと`HSPシステムフォルダ`にコピーする。
 2. `src\bin`ディレクトリの中身を`HSPシステムフォルダ`にコピーする。
@@ -67,7 +67,7 @@ hspc.exeがあるディレクトリ上に templates ディレクトリ が存在
 ```JSON
 {
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcuiconfig-schema.json",
-  "ver": "0.1.0.0-0.5.0.0",
+  "ver": "0.1.0.0-0.5.1.0",
   "profiles": [
     {
       "id": 0,
@@ -203,6 +203,9 @@ Hspcタスクの属性一覧
 
 
 # 履歴
+02/26 Version 0.5.1.0 公開  
+- ヘルプが表示されないエラーを修正しました。
+
 02/12 Version 0.5.0.0 公開  
 - MSBuildでのHSPコンパイルタスクの`HSPC.dll`が公開されました。  
 

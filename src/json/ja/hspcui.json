@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcui-schema.json",
-  "ver": "0.2.0.0-0.5.0.0",
+  "ver": "0.2.0.0-0.5.1.0",
   "lang": "ja",
   "options": [
     {
