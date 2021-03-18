@@ -95,6 +95,12 @@ hspcui --profile=Build source.hsp
 hspcui -P -m -C -D source.hsp
 ```
 と同じになります。  
+プロファイルで**指定できないオプション**は以下の表にある通りです。  
+| 指定できないオプション |
+| :----: |
+| --help |
+| --online |
+| --lang= |
 
 # AssemblyInfo.hsp 作成機能(プレリリース)
 **この機能は予告なく変更される恐れがあります。**  
