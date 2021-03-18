@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcui-schema.json",
-  "ver": "0.2.0.0-0.5.1.0",
+  "ver": "0.6.0.0-0.6.0.0",
   "lang": "ja",
   "options": [
     {
@@ -8,294 +8,352 @@
       "name": "help",
       "desctription": "指定したオプションの詳細を表示します。",
       "example": "hspcui --help a\nhspcui --help syspath=\n--syspath=\"C:\\hsp351\" hspcui --help a",
-      "note": "--syspath=, -E, --lang= オプションを利用したい場合は、このオプションの前に指定します。\n調べたいオプションに - をつけてはいけません。実行される恐れがあります。"
+      "note": "--syspath=, -E, --lang= オプションを利用したい場合は、このオプションの前に指定します。\n調べたいオプションに - をつけてはいけません。実行される恐れがあります。",
+      "linux": true
     },
     {
       "id": 1,
       "name": "a",
       "desctription": "ソースコードの文字コードを自動判別します。",
       "example": "hspcui -a source.hsp",
-      "note": "文字コードが utf-8 なら、AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。"
+      "note": "文字コードが utf-8 なら、AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。",
+      "linux": true
     },
     {
       "id": 2,
       "name": "c",
       "desctription": "HSP var2.6 としてコンパイルします。",
       "example": "hspcui -a -c source.hsp",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 3,
       "name": "C",
       "desctription": "カレントディレクトリをソースファイルが存在するディレクトリに変更します。",
       "example": "hspcui -a -C source.hsp",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 4,
       "name": "d",
       "desctription": "デバッグ情報を付与してコンパイルします。",
       "example": " hspcui -d -a source.hsp",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 5,
       "name": "D",
       "desctription": "コンパイルの成果物のうち、AssemblyInfo.hsp と自動実行ファイル以外を削除します。",
       "example": "hspcui -a -P -m -D source.hsp",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 6,
       "name": "E",
       "desctription": "hspcui 内で発生したエラーを無視して実行を続けます。",
       "example": "hspcui -a -E source .hsp",
-      "note": "このオプションの使用はとても危険です。使用しないことを勧めます。"
+      "note": "このオプションの使用はとても危険です。使用しないことを勧めます。",
+      "linux": true
     },
     {
       "id": 7,
       "name": "i",
       "desctription": "ソースファイルが utf-8 であることを示します。",
       "example": "hspcui -i source.hsp",
-      "note": "ソースコードの文字コードがわからないときは -a オプションを使用してください。\nAssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。"
+      "note": "ソースコードの文字コードがわからないときは -a オプションを使用してください。\nAssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。",
+      "linux": true
     },
     {
       "id": 8,
       "name": "j",
       "desctription": "ソースファイルが shift_jis であることを示します。",
       "example": "hspcui -j source.hsp",
-      "note": "ソースコードの文字コードがわからないときは -a オプションを使用してください。"
+      "note": "ソースコードの文字コードがわからないときは -a オプションを使用してください。",
+      "linux": true
     },
     {
       "id": 9,
       "name": "m",
       "desctription": "自動実行ファイルを作成します。",
       "example": "hspcui -a -P -m -D source.hsp",
-      "note": "packfileの生成が必要な場合は -P オプションを使用してください。"
+      "note": "packfileの生成が必要な場合は -P オプションを使用してください。",
+      "linux": false
     },
     {
       "id": 10,
       "name": "o",
       "desctription": "出力するオブジェクトファイル(.ax)か strmap の名前を指定します。",
       "example": "hspcui -a -oexample.ax source.hsp",
-      "note": "AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。"
+      "note": "AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。",
+      "linux": true
     },
     {
       "id": 11,
       "name": "outname=",
       "desctription": "出力するオブジェクトファイル(.ax)か strmap の名前を指定します。",
       "example": "hspcui -a --outname=example.ax source.hsp",
-      "note": "AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。"
+      "note": "AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。",
+      "linux": true
     },
     {
       "id": 12,
       "name": "p",
       "desctription": "プリプロセスのみを行います。",
       "example": "hspcui -a -p source.hsp",
-      "note": "テンプレート機能、検索機能は同時に使用できます。"
+      "note": "テンプレート機能、検索機能は同時に使用できます。",
+      "linux": true
     },
     {
       "id": 13,
       "name": "P",
       "desctription": "packfile を指定されたソースコードから作成します。\n-D オプションを使用することで削除できます。",
       "example": "hspcui -a -P -m -D source.hsp",
-      "note": ""
+      "note": "",
+      "linux": false
     },
     {
       "id": 14,
       "name": "r",
       "desctription": "指定されたソースファイルの実行をし、終了コードを出力します。\nまた、-mオプション指定時にはコンパイルした自動実行ファイルを実行します。",
       "example": "hspcui -a -r source.hsp",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 15,
       "name": "r=",
       "desctription": "指定されたソースファイルを指定された引数を与えて実行し、終了コードを出力します。\nまた、-mオプション指定時にはコンパイルした自動実行ファイルを実行します。",
       "example": "hspcui -a -r=1 source.hsp",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 16,
       "name": "r0",
       "desctription": "指定されたソースファイルのランタイムを表示します。",
       "example": "hspcui -r0 source.ax",
-      "note": "指定されたソースファイルの実行はされません。"
+      "note": "指定されたソースファイルの実行はされません。",
+      "linux": false
     },
     {
       "id": 17,
       "name": "s",
       "desctription": "指定されたソースファイルから strmap を作成します。",
       "example": "hspcui -a -s -u source.hsp",
-      "note": "-d オプションは無効化されて実行されます。\nHSP 3.6β2 以上のhspcmp.dllが必要です。"
+      "note": "-d オプションは無効化されて実行されます。\nHSP 3.6β2 以上のhspcmp.dllが必要です。",
+      "linux": true
     },
     {
       "id": 18,
       "name": "u",
       "desctription": "文字列データをUTF-8形式で出力します。",
       "example": "hspcui -a -s -u souurce.hsp",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 19,
       "name": "w",
       "desctription": "デバッグウインドウ表示フラグを設定します。",
       "example": "hspcui -a -d -w source.hsp",
-      "note": ""
+      "note": "",
+      "linux": false
     },
     {
       "id": 20,
       "name": "syspath=",
       "desctription": "HSPシステムフォルダを指定します。",
       "example": "hspcui -a --syspath=C:\\hsp351 source.hsp",
-      "note": "hspcui がHSPシステムフォルダに存在しない場合は必須です。"
+      "note": "hspcui がHSPシステムフォルダに存在しない場合は必須です。",
+      "linux": true
     },
     {
       "id": 21,
       "name": "compath=",
       "desctription": "common フォルダを指定します。",
       "example": "hspcui -a --compath=C:\\hsp351\\common\\ source.hsp",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 22,
       "name": "rtmpath=",
       "desctription": "runtime フォルダを指定します。",
       "example": "hspcui -a --compath=C:\\hsp351\\common\\ --rtmpath=C:\\hsp351\\runtime\\ source.hsp",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 23,
       "name": "temp",
       "desctription": "templates\\default ディレクトリをカレントディレクトリにコピーします。",
       "example": "hspcui --temp",
-      "note": "テンプレート機能については help template で詳細が確認できます。"
+      "note": "テンプレート機能については help template で詳細が確認できます。",
+      "linux": true
     },
     {
       "id": 24,
       "name": "temp=",
       "desctription": "指定されたテンプレートディレクトリをカレントディレクトリにコピーします。",
       "example": "hspcui --temp=example",
-      "note": "テンプレート機能については help template で詳細が確認できます。"
+      "note": "テンプレート機能については help template で詳細が確認できます。",
+      "linux": true
     },
     {
       "id": 25,
       "name": "tempd",
       "desctription": "templates\\default ディレクトリを削除します。",
       "example": "hspcui --tempd",
-      "note": "テンプレート機能については help template で詳細が確認できます。"
+      "note": "テンプレート機能については help template で詳細が確認できます。",
+      "linux": true
     },
     {
       "id": 26,
       "name": "tempd=",
       "desctription": "指定されたテンプレートディレクトリを削除します。",
       "example": "hspcui --tempd=example",
-      "note": "テンプレート機能については help template で詳細が確認できます。"
+      "note": "テンプレート機能については help template で詳細が確認できます。",
+      "linux": true
     },
     {
       "id": 27,
       "name": "tempa=",
       "desctription": "指定したディレクトリを templates ディレクトリにコピーします。",
       "example": "hspcui --tempa=example",
-      "note": "テンプレート機能については help template で詳細が確認できます。"
+      "note": "テンプレート機能については help template で詳細が確認できます。",
+      "linux": true
     },
     {
       "id": 28,
       "name": "tempo=",
       "desctription": "コピー先でのディレクトリ名を指定します。",
       "example": "hspcui --temp --tempo=example",
-      "note": "テンプレート機能については help template で詳細が確認できます。"
+      "note": "テンプレート機能については help template で詳細が確認できます。",
+      "linux": true
     },
     {
       "id": 29,
       "name": "template",
       "desctription": "template-desctription.txt",
-      "example": "",
-      "note": "template-note.txt"
+      "example": "例はそれぞれのオプションを参照してください。",
+      "note": "template-note.txt",
+      "linux": true
     },
     {
       "id": 30,
       "name": "h",
       "desctription": "指定したHSP命令を検索します。",
       "example": "hspcui -hmes",
-      "note": "オンラインで検索する際は --online オプションを使用してください。"
+      "note": "オンラインで検索する際は --online オプションを使用してください。",
+      "linux": true
     },
     {
       "id": 31,
       "name": "online",
       "desctription": "-h オプションの検索時にオンラインで検索します。",
       "example": "hspcui -hmes --online",
-      "note": ""
+      "note": "",
+      "linux": false
     },
     {
       "id": 32,
       "name": "lang=",
       "desctription": "実行時の言語を指定します。指定できる言語は ja か en です。\nまた、デフォルトの言語は ja です。",
       "example": "hspcui --lang=en -a source.hsp\nhspcui --lang=en --help -a",
-      "note": "このオプションは一番最初に指定される必要があります。\nこのオプションに関して、-E オプションは機能しません。"
+      "note": "このオプションは一番最初に指定される必要があります。\nこのオプションに関して、-E オプションは機能しません。",
+      "linux": true
     },
     {
       "id": 33,
       "name": "profile=",
       "desctription": "指定したプロファイルを実行します。\n詳細は --help profile で表示きます。",
       "example": "hspcui --profile=0 source.hsp",
-      "note": "この機能は注意点がたくさんあります。仕様をよく理解したうえで使用してください。"
+      "note": "この機能は注意点がたくさんあります。仕様をよく理解したうえで使用してください。",
+      "linux": true
     },
     {
       "id": 34,
       "name": "profile",
       "desctription": "profile-desctription.txt",
       "example": "profile-example.txt",
-      "note": "profile-note.txt"
+      "note": "profile-note.txt",
+      "linux": true
     },
     {
       "id": 35,
       "name": "version",
       "desctription": "hspcui のバージョンを表示します。",
       "example": "hspcui --version",
-      "note": "他のオプションとの併用はできません。"
+      "note": "他のオプションとの併用はできません。",
+      "linux": true
     },
     {
       "id": 36,
       "name": "license",
       "desctription": "hspcui のライセンスを表示します。",
       "example": "hspcui --license",
-      "note": "他のオプションとの併用はできません。"
+      "note": "他のオプションとの併用はできません。",
+      "linux": true
     },
     {
       "id": 37,
       "name": "platform=",
       "desctription": "プラットフォームを指定します。\n指定できるのは x86 か x64 の二つです。",
       "example": "hspcui --platform=x64 source.hsp",
-      "note": "AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。"
+      "note": "AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。",
+      "linux": true
     },
     {
       "id": 38,
       "name": "see",
       "desctription": "hspcui で指定したオプションを表示します。",
       "example": "hspcui --profile=0 --see",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 39,
       "name": "notasminfo",
       "desctription": "AssemblyInfo.hsp ファイルを生成しません。",
       "example": "hspcui --platform=x64 --notasminfo source.hsp",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 40,
       "name": "nologo",
       "desctription": "著作権情報を表示しません。",
       "example": "hspcui --nologo -a source.hsp",
-      "note": ""
+      "note": "",
+      "linux": true
     },
     {
       "id": 41,
       "name": "oldcmpmes",
       "desctription": "従来通りのコンパイルメッセージを表示します。",
       "example": "hspcui --oldcmpmes -a source.hsp",
-      "note": "表示されていないエラーがあると思われる場合にのみ利用してください。"
+      "note": "表示されていないエラーがあると思われる場合にのみ利用してください。",
+      "linux": true
+    },
+    {
+      "id": 42,
+      "name": "profilea=",
+      "desctription": "指定されたプロファイルID又はプロファイル名でプロファイルを追加します。",
+      "example": " hspcui --profilea=Build -a -d -C -D",
+      "note": "既に存在する場合は上書きされます。",
+      "linux": true
+    },
+    {
+      "id": 43,
+      "name": "profiled=",
+      "desctription": "指定されたプロファイルID又はプロファイル名でプロファイルを削除します。",
+      "example": " hspcui --profiled=Build",
+      "note": "",
+      "linux": true
     }
   ]
 }

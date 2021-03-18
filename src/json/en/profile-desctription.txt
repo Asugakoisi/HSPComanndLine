@@ -4,13 +4,16 @@ Profiles can be registered in hspcuiconfig.json in the user folder.
 
 Option list
 --profile=  Uses the profile with the specified profile ID.
+--profilea= Adds a profile with the specified profile ID or profile name.
+			If it already exists, it will be overwritten.
+--profiled= Deletes the profile with the specified profile ID or profile name. 
 
 How to write hspcuiconfig.json
 |-"ver"      ……  The version of hspcui that this profile corresponds to. It is in the format of "min_ver-max_ver".
 |-"profiles" ……  Array of profiles
    |-"id"       ……  Profile ID
    |-"name"     ……  Profile name. You can be specified instead of the profile ID.
-   |-"commands" ……  Specify the options you want to omit here one by one.
+   |-"options" ……  Specify the options you want to omit here one by one.
 
 --profile= Optional handling
 If this option is specified, it will fetch the specified profile from hspcuiconfig.json and expand it to the beginning of the specified option.

@@ -54,7 +54,8 @@
               "name",
               "desctription",
               "example",
-              "note"
+              "note",
+              "linux"
             ],
             "properties": {
               "id": {
@@ -72,7 +73,7 @@
                 "description": "オプション名",
                 "default": "",
                 "minLength": 1,
-                "pattern": "^((a|c|C|d|D|E|i|j|m|p|P|r|r0|s|u|w|o|h|online|temp|tempd|template|help|profile|version|license|see|notasminfo|nologo|oldcmpmes)|((outname|syspath|compath|rtmpath|temp|tempd|tempa|tempo|lang|profile|r|platform)=))$"
+                "pattern": "^((a|c|C|d|D|E|i|j|m|p|P|r|r0|s|u|w|o|h|online|temp|tempd|template|help|profile|version|license|see|notasminfo|nologo|oldcmpmes)|((outname|syspath|compath|rtmpath|temp|tempd|tempa|tempo|lang|profile|profilea|profiled|r|platform)=))$"
               },
               "desctription": {
                 "$id": "#/properties/options/items/anyOf/0/properties/desctription",
@@ -95,6 +96,13 @@
                 "title": "The note schema",
                 "description": "オプションの注意点。ないときは空文字で。",
                 "default": ""
+              },
+              "linux": {
+                "$id": "#/properties/options/items/anyOf/0/properties/linux",
+                "type": "boolean",
+                "title": "The env schema",
+                "description": "このオプションが使えるOS",
+                "default": true
               }
             },
             "additionalProperties": false

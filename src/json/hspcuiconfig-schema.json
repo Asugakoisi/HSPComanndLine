@@ -49,10 +49,10 @@
                 "minLength": 1,
                 "pattern": "^[a-zA-Z0-9]+$"
               },
-              "commands": {
+              "options": {
                 "$id": "#/properties/profiles/items/anyOf/0/properties/commands",
                 "type": "array",
-                "title": "The commands schema",
+                "title": "The options schema",
                 "description": "このプロファイルが指定されたときに実行されるオプションの配列",
                 "default": [],
                 "additionalItems": false,
@@ -66,7 +66,7 @@
                       "title": "The first anyOf schema",
                       "description": "実行されるオプション",
                       "default": "",
-                      "pattern": "^((-(a|c|C|d|D|E|i|j|m|p|P|r|r0|s|u|w))|(--(outname|syspath|compath|rtmpath|tempd|tempa|tempo|platform)=([^ ]+))|(-(o|h)([^ ]+))|--(temp|tempd|version|license|see|notasminfo|nologo|oldcmpmes))$"
+                      "pattern": "^((-(a|c|C|d|D|E|i|j|m|p|P|r|r0|s|u|w))|(--(outname|syspath|compath|rtmpath|tempd|tempa|tempo|platform|profilea|profiled)=([^ ]+))|(-(o|h)([^ ]+))|--(temp|tempd|version|license|see|notasminfo|nologo|oldcmpmes))$"
                     }
                   ]
                 }

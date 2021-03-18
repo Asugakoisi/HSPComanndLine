@@ -3,11 +3,13 @@ HSPのコマンドラインインターフェース。hspcのパクリ。
 **HSP Dish や AHT のコンパイルはできません。従来通りHSPエディタからコンパイルしてください。**
 
 # やること
-[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.5.1.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
+[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.6.0.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
 以下の二つのことをしてください。  
 1. `src\json\ja`と`src\json\en`ディレクトリを丸ごと`HSPシステムフォルダ`にコピーする。
-2. `src\bin`ディレクトリの中身を`HSPシステムフォルダ`にコピーする。
-3. `src\bin`ディレクトリの中身を`HSPシステムフォルダ\en`にコピーする。
+2. `src\bin\win`ディレクトリの中身を`HSPシステムフォルダ`にコピーする。
+3. `src\bin\win`ディレクトリの中身を`HSPシステムフォルダ\en`にコピーする。  
+
+Linuxでは`win`ディレクトリではなく、`linux`ディレクトリの中身をコピーしてください。
   
 つまり、こうなっていればいいです。  
 HSPディレクトリ:  
@@ -24,6 +26,7 @@ HSPディレクトリ\ja:
 
 # 注意
 hspcui を使うには、[HSP3.6β4](https://www.onionsoft.net/wp/archives/3274)以降が必要です。(strmap機能対応のため。)  
+また、**Linux版では`-P`,`-m`,`-r0`,`-w`オプションが使用できません**。  
 
 # 英語モード(--lang=en)について
 ここで表示される英語は正しいものとは限りません。  
@@ -67,12 +70,12 @@ hspc.exeがあるディレクトリ上に templates ディレクトリ が存在
 ```JSON
 {
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcuiconfig-schema.json",
-  "ver": "0.1.0.0-0.5.1.0",
+  "ver": "0.6.0.0-0.6.0.0",
   "profiles": [
     {
       "id": 0,
       "name": "Build",
-      "commands": [
+      "options": [
         "-P",
         "-m",
         "-C",
@@ -190,6 +193,8 @@ Hspcタスクの属性一覧
 | --outname= | コンパイルした出力するファイル名を指定します。 |
 | --platform= | プラットフォームを指定します。指定できるのは x86 か x64 の二つです。 |
 | --profile= | 指定したプロファイルを実行します。 |
+| --profilea= | 指定されたプロファイルID又はプロファイル名でプロファイルを追加します。 |
+| --profiled= | 指定されたプロファイルID又はプロファイル名でプロファイルを削除します。 |
 | --rtmpath= | runtime フォルダを指定します。 |
 | --see | hspcui で指定したオプションを表示します。 |
 | --syspath= | HSPシステムフォルダを指定します。 |
@@ -203,6 +208,11 @@ Hspcタスクの属性一覧
 
 
 # 履歴
+03/18 Version 0.6.0.0 公開  
+- プロファイルのjsonスキーマが変わりました。
+- コマンドラインからプロファイルの登録・削除ができるようになりました。
+- Linux版の hspcui を公開しました。
+
 02/26 Version 0.5.1.0 公開  
 - ヘルプが表示されないエラーを修正しました。
 

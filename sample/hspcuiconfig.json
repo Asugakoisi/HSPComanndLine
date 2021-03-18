@@ -1,11 +1,11 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcuiconfig-schema.json",
-  "ver": "0.1.0.0-0.5.1.0",
+  "ver": "0.6.0.0-0.6.0.0",
   "profiles": [
     {
       "id": 0,
       "name": "Build",
-      "commands": [
+      "options": [
         "-P",
         "-m",
         "-C",
