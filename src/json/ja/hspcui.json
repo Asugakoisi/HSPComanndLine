@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcui-schema.json",
-  "ver": "0.6.0.0-0.6.0.0",
+  "ver": "0.6.0.0-0.7.0.0",
   "lang": "ja",
   "options": [
     {
@@ -137,7 +137,7 @@
       "desctription": "指定されたソースファイルのランタイムを表示します。",
       "example": "hspcui -r0 source.ax",
       "note": "指定されたソースファイルの実行はされません。",
-      "linux": false
+      "linux": true
     },
     {
       "id": 17,
@@ -150,9 +150,9 @@
     {
       "id": 18,
       "name": "u",
-      "desctription": "文字列データをUTF-8形式で出力します。",
+      "desctription": "ソースファイルをUTF-8でエンコードし、文字列データをUTF-8形式で出力します。",
       "example": "hspcui -a -s -u souurce.hsp",
-      "note": "",
+      "note": "このオプションはlinux版では自動的に設定されます。",
       "linux": true
     },
     {
@@ -305,7 +305,7 @@
       "desctription": "プラットフォームを指定します。\n指定できるのは x86 か x64 の二つです。",
       "example": "hspcui --platform=x64 source.hsp",
       "note": "AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。",
-      "linux": true
+      "linux": false
     },
     {
       "id": 38,
@@ -352,6 +352,22 @@
       "name": "profiled=",
       "desctription": "指定されたプロファイルID又はプロファイル名でプロファイルを削除します。",
       "example": " hspcui --profiled=Build",
+      "note": "",
+      "linux": true
+    },
+    {
+      "id": 44,
+      "name": "refname=",
+      "desctription": "表示するソースファイル名を変更します。",
+      "example": "hspcui --refname=test test_dev.hsp",
+      "note": "",
+      "linux": false
+    },
+    {
+      "id": 45,
+      "name": "tmppath=",
+      "desctription": "templates フォルダを指定します。",
+      "example": "hspcui --temp --tmppath=C:\templates",
       "note": "",
       "linux": true
     }

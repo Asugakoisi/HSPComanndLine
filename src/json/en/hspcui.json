@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcui-schema.json",
-  "ver": "0.6.0.0-0.6.0.0",
+  "ver": "0.6.0.0-0.7.0.0",
   "lang": "en",
   "options": [
     {
@@ -137,7 +137,7 @@
       "desctription": "Shows the runtime of the specified source file.",
       "example": "hspcui -r0 source.hsp",
       "note": "The specified source file will not be executed.",
-      "linux": false
+      "linux": true
     },
     {
       "id": 17,
@@ -150,9 +150,9 @@
     {
       "id": 18,
       "name": "u",
-      "desctription": "Outputs character string data in UTF-8 format.",
+      "desctription": "Encodes the source file in UTF-8 and outputs the character string data in UTF-8 format.",
       "example": "hspcui -a -s -u source.hsp",
-      "note": "",
+      "note": "This option is set automatically in the linux version.",
       "linux": true
     },
     {
@@ -305,7 +305,7 @@
       "desctription": "Specify the platform.\nYou can specify either x86 or x64.",
       "example": "hspcui --platform=x64 source.hsp",
       "note": "An AssemblyInfo.hsp file will be generated and [#include \"AssemblyInfo.hsp\"] will be inserted in the first line of the source file.",
-      "linux": true
+      "linux": false
     },
     {
       "id": 38,
@@ -343,7 +343,7 @@
       "id": 42,
       "name": "profilea=",
       "desctription": "Adds a profile with the specified profile ID or profile name.",
-      "example": " hspcui --profilea=Build -a -d -C -D",
+      "example": "hspcui --profilea=Build -a -d -C -D",
       "note": "If it already exists, it will be overwritten.",
       "linux": true
     },
@@ -351,7 +351,23 @@
       "id": 43,
       "name": "profiled=",
       "desctription": "Deletes the profile with the specified profile ID or profile name.",
-      "example": " hspcui --profiled=Build",
+      "example": "hspcui --profiled=Build",
+      "note": "",
+      "linux": true
+    },
+    {
+      "id": 44,
+      "name": "refname=",
+      "desctription": "Change the name of the source file to be displayed. ",
+      "example": "hspcui --refname=test test_dev.hsp",
+      "note": "",
+      "linux": false
+    },
+    {
+      "id": 45,
+      "name": "tmppath=",
+      "desctription": "Specify the templates folder.",
+      "example": "hspcui --temp --tmppath=C:\templates",
       "note": "",
       "linux": true
     }

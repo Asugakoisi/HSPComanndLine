@@ -9,3 +9,4 @@ Option list
 --tempd=   Deletes the specified template directory.
 --tempa=   Copies the specified directory to the templates directory.
 --tempo=   Specify the directory name at the copy destination.
+--tmppath= Specify the templates folder.

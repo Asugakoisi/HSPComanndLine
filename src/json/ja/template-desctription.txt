@@ -9,3 +9,4 @@ hspc.exeがあるディレクトリ上に templates ディレクトリ が存在
 --tempd=   指定されたテンプレートディレクトリを削除します。
 --tempa=   指定されたディレクトリを templates ディレクトリにコピーします。
 --tempo=   コピー先でのディレクトリ名を指定します。
+--tmppath= templates ディレクトリを指定します。
