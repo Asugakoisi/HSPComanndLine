@@ -27,7 +27,8 @@ HSPディレクトリ\ja:
 
 # 注意
 hspcui を使うには、[HSP3.6β4](https://www.onionsoft.net/wp/archives/3274)以降が必要です。(strmap機能対応のため。)  
-また、**Linux版では`-P`,`-m`,`-r0`,`-w`オプションが使用できません**。  
+また、**Linux版では`-P`,`-m`,`-w`,`--platform`オプションが使用できません**。  
+さらに、Linuxでは文字コードが`UTF-8`であることから`-u`オプションが常に有効化されます。  
 
 # 英語モード(--lang=en)について
 ここで表示される英語は正しいものとは限りません。  
@@ -71,7 +72,7 @@ hspc.exeがあるディレクトリ上に templates ディレクトリ が存在
 ```JSON
 {
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcuiconfig-schema.json",
-  "ver": "0.6.0.0-0.6.0.0",
+  "ver": "0.6.0.0-0.7.0.0",
   "profiles": [
     {
       "id": 0,
@@ -123,6 +124,9 @@ hspcui -P -m -C -D source.hsp
 ただし、自動実行ファイル名を指定できませんし、`--platform=`オプションは無効化されます。  
 また、ソースコードが`UTF-8`の場合はソースコード側で`hsp3utf`ランタイムの指定を忘れないでください。  
 
+## linuxにおける AssemblyInfo.hsp について
+現在 Linux ではこの機能が効果を発揮する事はないため、コンパイル時には`--notasminfo`オプションをつけることを推奨します。  
+
 # HSPCタスク  
 MSBuildでこのタスクを使うとHSPスクリプトファイルのコンパイルができるようになります。  
 また使用する際は、`HSPC.dll`と`hspcmp.dll`を同じディレクトリに配置してください。  
@@ -158,6 +162,7 @@ Hspcタスクの属性一覧
 | OnDebugWindow | bool | false | デバッグウインドウ表示フラグを設定します。 |
 | Output | string | string.Empty | コンパイルした出力するファイル名を指定します。 |
 | Platform | string | x86 | プラットフォームを指定します。指定できるのは x86 か x64 の二つです。 |
+| RefName | string | string.Empty | 表示するソースファイル名を変更します。 |
 | RuntimeDirectory | string | string.Empty | runtime フォルダを指定します。 |
 | SourceFile | string | null | 必須項目。コンパイルするファイルを指定します。 |
 | SystemDirectory | string | null | 必須項目。HSPシステムフォルダを指定します。 |
@@ -202,6 +207,7 @@ Hspcタスクの属性一覧
 | --profile= | 指定したプロファイルを実行します。 |
 | --profilea= | 指定されたプロファイルID又はプロファイル名でプロファイルを追加します。 |
 | --profiled= | 指定されたプロファイルID又はプロファイル名でプロファイルを削除します。 |
+| --refname= | 表示するソースファイル名を変更します。 |
 | --rtmpath= | runtime フォルダを指定します。 |
 | --see | hspcui で指定したオプションを表示します。 |
 | --syspath= | HSPシステムフォルダを指定します。 |
@@ -211,10 +217,20 @@ Hspcタスクの属性一覧
 | --tempd= | 指定されたテンプレートディレクトリを削除します。 |
 | --tempa= | 指定したディレクトリを templates ディレクトリにコピーします。 |
 | --tempo= | コピー先でのディレクトリ名を指定します。 |
+| --tmppath= | templates フォルダを指定します。 |
 | --version | hspcui のバージョンを表示します。 |
 
 
 # 履歴
+04/04 Version 0.7.0.0 公開  
+- 共通事項
+  - `-u`オプションの動作が変更されました。
+  - `--refname`, `--tmppath=`オプションが追加されました。  
+
+- Linux版
+　- `-r0`オプションに対応しました。
+  - `--platform=`オプションが無効化されました。
+
 03/18 Version 0.6.0.0 公開  
 - プロファイルのjsonスキーマが変わりました。
 - コマンドラインからプロファイルの登録・削除ができるようになりました。
