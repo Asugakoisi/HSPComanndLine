@@ -150,7 +150,7 @@
     {
       "id": 18,
       "name": "u",
-      "desctription": "ソースファイルをUTF-8でエンコードし、文字列データをUTF-8形式で出力します。",
+      "desctription": "ソースファイルをUTF-8にエンコードし、文字列データをUTF-8形式で出力します。",
       "example": "hspcui -a -s -u souurce.hsp",
       "note": "このオプションはlinux版では自動的に設定されます。",
       "linux": true
