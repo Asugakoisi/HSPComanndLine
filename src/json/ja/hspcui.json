@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcui-schema.json",
-  "ver": "0.6.0.0-0.7.0.0",
+  "ver": "0.6.0.0-0.7.1.0",
   "lang": "ja",
   "options": [
     {
@@ -17,7 +17,7 @@
       "desctription": "ソースコードの文字コードを自動判別します。",
       "example": "hspcui -a source.hsp",
       "note": "文字コードが utf-8 なら、AssemblyInfo.hsp ファイルが生成され、ソースファイルの一行目に #include \"AssemblyInfo.hsp\" が挿入されます。",
-      "linux": true
+      "linux": false
     },
     {
       "id": 2,
@@ -73,7 +73,7 @@
       "desctription": "ソースファイルが shift_jis であることを示します。",
       "example": "hspcui -j source.hsp",
       "note": "ソースコードの文字コードがわからないときは -a オプションを使用してください。",
-      "linux": true
+      "linux": false
     },
     {
       "id": 9,
@@ -321,7 +321,7 @@
       "desctription": "AssemblyInfo.hsp ファイルを生成しません。",
       "example": "hspcui --platform=x64 --notasminfo source.hsp",
       "note": "",
-      "linux": true
+      "linux": false
     },
     {
       "id": 40,

@@ -4,7 +4,7 @@ HSPのコマンドラインインターフェース。hspcのパクリ。
 注意は見てください。
 
 # やること
-[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.7.0.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
+[Release](https://github.com/Asugakoisi/HSPComanndLine/releases/tag/v0.7.1.0) をダウンロードして、中身をHSPシステムフォルダにコピーするか、  
 以下の二つのことをしてください。  
 1. `src\json\ja`と`src\json\en`ディレクトリを丸ごと`HSPシステムフォルダ`にコピーする。
 2. `src\bin\win`ディレクトリの中身を`HSPシステムフォルダ`にコピーする。
@@ -27,8 +27,19 @@ HSPディレクトリ\ja:
 
 # 注意
 hspcui を使うには、[HSP3.6β4](https://www.onionsoft.net/wp/archives/3274)以降が必要です。(strmap機能対応のため。)  
-また、**Linux版では`-P`,`-m`,`-w`,`--platform`オプションが使用できません**。  
-さらに、Linuxでは文字コードが`UTF-8`であることから`-u`オプションが常に有効化されます。  
+また、Linuxでは文字コードが`UTF-8`であることから`-u`オプションがコンパイル時に有効化されます。  
+さらに、**Linux版では以下のオプションが使用できません**。  
+| 使用できないオプション |
+| :----: |
+| -a |
+| -j |
+| -P |
+| -m |
+| -w |
+| --notasminfo |
+| --online |
+| --platform= |
+| --refname= |
 
 # 英語モード(--lang=en)について
 ここで表示される英語は正しいものとは限りません。  
@@ -72,7 +83,7 @@ hspc.exeがあるディレクトリ上に templates ディレクトリ が存在
 ```JSON
 {
   "$schema": "https://raw.githubusercontent.com/Asugakoisi/HSPComanndLine/main/src/json/hspcuiconfig-schema.json",
-  "ver": "0.6.0.0-0.7.0.0",
+  "ver": "0.6.0.0-0.7.1.0",
   "profiles": [
     {
       "id": 0,
@@ -125,7 +136,8 @@ hspcui -P -m -C -D source.hsp
 また、ソースコードが`UTF-8`の場合はソースコード側で`hsp3utf`ランタイムの指定を忘れないでください。  
 
 ## linuxにおける AssemblyInfo.hsp について
-現在 Linux ではこの機能が効果を発揮する事はないため、コンパイル時には`--notasminfo`オプションをつけることを推奨します。  
+現在 Linux ではこの機能が効果を発揮する事はないため、**無効化**されました。  
+それに伴い、`--notasminfo`オプションも無効化されました。
 
 # HSPCタスク  
 MSBuildでこのタスクを使うとHSPスクリプトファイルのコンパイルができるようになります。  
@@ -222,6 +234,14 @@ Hspcタスクの属性一覧
 
 
 # 履歴
+04/25 Version 0.7.1.0 公開  
+- 共通事項
+  - isuue #6, #7, #8 に対応しました。  
+
+- Linux版
+  - `-u`オプションはコンパイル時にのみ適応されるようになりました。
+  - `-a`, `-j`, `--notasminfo`オプションが無効化されました。
+
 04/04 Version 0.7.0.0 公開  
 - 共通事項
   - `-u`オプションの動作が変更されました。
