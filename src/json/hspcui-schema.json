@@ -55,7 +55,8 @@
               "desctription",
               "example",
               "note",
-              "linux"
+              "linux",
+              "command"
             ],
             "properties": {
               "id": {
@@ -100,9 +101,16 @@
               "linux": {
                 "$id": "#/properties/options/items/anyOf/0/properties/linux",
                 "type": "boolean",
-                "title": "The env schema",
+                "title": "The linux schema",
                 "description": "このオプションが使えるOS",
                 "default": true
+              },
+              "command": {
+                "$id": "#/properties/options/items/anyOf/0/properties/command",
+                "type": "boolean",
+                "title": "The command schema",
+                "description": "説明がコマンドかどうか",
+                "default": false
               }
             },
             "additionalProperties": false
