@@ -100,6 +100,7 @@ hspcui -P -m -C -D source.hsp
 | --help |
 | --profile= |
 | --lang= |  
+
 また、Linux版では使用できないオプションも指定できません。  
 
 # AssemblyInfo.hsp 作成機能
@@ -167,6 +168,10 @@ Hspcタスクの属性一覧
 
 カスタムタスクの作成については[タスクの作成](https://docs.microsoft.com/ja-jp/visualstudio/msbuild/task-writing?view=vs-2019)を見てください。  
 
+# hspcmpの切り替え
+コンパイル時に指定された`HSPシステムディレクトリ`にある`hspcmp`を参照するようになりました。
+指定されなかったときは、`hspcui`があるディレクトリの`hspcmp`を参照します。
+
 # オプション一覧  
 一文字オプション  
 | オプション | 説明 |
@@ -198,7 +203,7 @@ Hspcタスクの属性一覧
 | --license | hspcui のライセンスを表示します。 |
 | --nologo | 著作権情報を表示しません。 |
 | --notasminfo | AssemblyInfo.hsp ファイルを生成しません。 |
-| --oldcmpmes | 従来通りのコンパイルメッセージを表示します。 |
+| --newcmpmes | エラーコード付きのコンパイルメッセージを表示します。 |
 | --online | -h オプションの検索時にオンラインで検索します。 |
 | --outname= | コンパイルした出力するファイル名を指定します。 |
 | --platform= | プラットフォームを指定します。指定できるのは x86 か x64 の二つです。 |
@@ -220,6 +225,16 @@ Hspcタスクの属性一覧
 
 
 # 履歴
+07/04 Version 1.0.0.0 公開  
+- 共通事項
+  - コマンドに対応しました。  
+  - `AssemblyInfo.hsp`機能が強化されました。  
+  - コンパイルメッセージ表示をhspcmpのもののままにしました。(#10)
+  - `hspcmp`を指定できるようになりました。(#12) [hspcmpの切り替え](#hspcmpの切り替え)を参照してください。
+
+- Windows版
+  - オンライン検索(`--online`オプション)が無効化されました(#9)  
+
 04/25 Version 0.7.1.0 公開  
 - 共通事項
   - isuue #6, #7, #8 に対応しました。  
