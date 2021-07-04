@@ -1,0 +1,9 @@
+﻿使用法: hspcui profile add <NAME> <OPTIONS>
+
+引数:
+<NAME>       登録するプロファイル名。省略できます。
+<OPTIONS>    登録するオプション。
+
+オプション:
+--help              コマンド ラインのヘルプを表示します。
+--lang=<LANGAGE>    実行時の言語を指定します。使用可能な値 ja、en。

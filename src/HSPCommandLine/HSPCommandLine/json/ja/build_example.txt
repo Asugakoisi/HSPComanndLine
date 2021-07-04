@@ -1,0 +1,12 @@
+﻿- 普通にコンパイルする。
+    hspcui build source.hsp -j
+- ソースコードの文字コードを自動判別してコンパイルする。
+    hspcui build source.hsp -a
+- 自動実行ファイルを生成する。
+    hspcui build source.hsp -a -t exe
+- strmap を生成する。
+    hspcui build source.hsp -a -t strmap
+- 文字列データ（AssemblyInfo.hsp, strmapなど）をUTF-8形式で出力したいとき。
+    hspcui build source.hsp -u
+- 出力ファイル名を変更する。
+    hspcui build source.hsp -o test.hsp

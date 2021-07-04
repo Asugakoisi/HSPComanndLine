@@ -1,0 +1,2 @@
+﻿- Options that cannot be specified in the Linux version.
+    -t|--type exe, -a, -j, -n | --notasminfo, --platform, --refname

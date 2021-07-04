@@ -1,0 +1,6 @@
+﻿- Copy the default template.
+    hspcui template copy
+- Copy the test template.
+    hspcui template copy test
+- Copy the test template from the specified templates directory.
+    hspcui template copy test --tmppath C: \ templates

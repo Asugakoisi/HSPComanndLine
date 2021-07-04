@@ -1,0 +1,4 @@
+﻿- Copy the test template to the templates directory.
+    hspcui template add test
+- copy the test template to the specified templates directory.
+    hspcui template add test --tmppath C: \ templates

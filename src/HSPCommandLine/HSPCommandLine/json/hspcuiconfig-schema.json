@@ -1,0 +1,117 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+  "description": "The root schema compries the entire JSON document",
+  "type": "object",
+  "default": {},
+  "required": [
+    "profiles",
+    "ver"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "ver": {
+      "$ref": "./hspcui-schema.json#/properties/ver"
+    },
+    "system": {
+      "$id": "#/properties/system",
+      "type": "string",
+      "title": "The system schema",
+      "description": "HSPシステムディレクトリのパス"
+    },
+    "common": {
+      "$id": "#/properties/common",
+      "type": "string",
+      "title": "The common schema",
+      "description": "commonディレクトリのパス",
+      "default": "common",
+      "examples": [
+        "common"
+      ]
+    },
+    "runtime": {
+      "$id": "#/properties/runtime",
+      "type": "string",
+      "title": "The runtime schema",
+      "description": "runtimeディレクトリのパス",
+      "default": "runtime",
+      "examples": [
+        "runtime"
+      ]
+    },
+    "templates": {
+      "$id": "#/properties/templates",
+      "type": "string",
+      "title": "The templates schema",
+      "description": "templates ディレクトリのパス",
+      "default": "templates",
+      "examples": [
+        "templates"
+      ]
+    },
+    "profiles": {
+      "$id": "#/properties/commands",
+      "type": "array",
+      "title": "The commands schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "additionalItems": false,
+      "required": [
+        "id",
+        "commands"
+      ],
+      "items": {
+        "$id": "#/properties/commands/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/commands/items/anyOf/0",
+            "type": "object",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "properties": {
+              "id": {
+                "$id": "./hspcui-schema.json#/properties/options/items/anyOf/0/properties/id",
+                "description": "プロファイル番号"
+              },
+              "name": {
+                "$id": "#/properties/profiles/items/anyOf/0/properties/name",
+                "type": "string",
+                "title": "The name schema",
+                "description": "プロファイル名",
+                "default": "default",
+                "minLength": 1,
+                "pattern": "^[a-zA-Z0-9]+$"
+              },
+              "options": {
+                "$id": "#/properties/profiles/items/anyOf/0/properties/commands",
+                "type": "array",
+                "title": "The options schema",
+                "description": "このプロファイルが指定されたときに実行されるオプションの配列",
+                "default": [],
+                "additionalItems": false,
+                "minItems": 1,
+                "items": {
+                  "$id": "#/properties/profiles/items/anyOf/0/properties/commands/items",
+                  "anyOf": [
+                    {
+                      "$id": "#/properties/profiles/items/anyOf/0/properties/commands/items/anyOf/0",
+                      "type": "string",
+                      "title": "The first anyOf schema",
+                      "description": "実行されるオプション",
+                      "default": "",
+                      "pattern": "^((-(a|c|C|d|D|E|i|j|m|p|P|r|r0|s|u|w))|(--(outname|syspath|compath|rtmpath|tempd|tempa|tempo|platform|profilea|profiled|refname|tmppath)=([^ ]+))|(-(o|h)([^ ]+))|--(temp|tempd|version|license|see|notasminfo|nologo|newcmpmes))$"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "additionalItems": false
+}

@@ -1,0 +1,11 @@
+﻿Usage: hspcui config <system|common|runtime|templates> <SET_DIR> [options]
+
+argument:
+<system|common|runtime|templates>    Target directory to register
+<SET_DIR>                            Absolute path of the directory to be registered
+
+option:
+-E                  Ignore any errors that occur in hspcui and continue execution.
+-h, --help          Displays command line help.
+--view              Displays the registered directory path.
+--lang=<LANGAGE>    Specifies the language at runtime. Possible values ​​ja, en.

@@ -1,0 +1,11 @@
+﻿使用法: hspcui config <system|common|runtime|templates> <SET_DIR> [options]
+
+引数:
+<system|common|runtime|templates>    登録する対象ディレクトリ
+<SET_DIR>                            登録するディレクトリの絶対パス
+
+オプション:
+-E                  hspcui 内で発生したエラーを無視して実行を続けます。
+-h, --help          コマンド ラインのヘルプを表示します。
+--view              登録されているディレクトリパスを表示します。
+--lang=<LANGAGE>    実行時の言語を指定します。使用可能な値 ja、en。

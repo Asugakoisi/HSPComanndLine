@@ -1,0 +1,6 @@
+﻿- Run normally.
+    hspcui run source.ax
+- Run with options.
+    hspcui run source.ax-"option"
+- Display runtime.
+    hspcui run source.ax -r0

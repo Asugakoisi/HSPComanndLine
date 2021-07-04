@@ -1,0 +1,4 @@
+﻿- HSP システムフォルダを登録します。
+    hspcui config system C:\hsp36
+- HSP システムフォルダの登録を解除します。
+    hspcui config system ""

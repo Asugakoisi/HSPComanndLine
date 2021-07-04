@@ -1,4 +1,0 @@
-﻿--tempo= オプションについて
-このオプションは --temp --temp= --tempa= オプションの時に適応されます。
---temp --temp= オプションでは、カレントディレクトリにコピーする際のディレクトリ名が変更され、 --tempa= オプションでは、テンプレートディレクトリにコピーする際のディレクトリ名が変更されます。
-つまり、"--temp=test --tempo=test_copy"とすれば、"template\test" の内容が "カレントディレクトリ\test_copy" にコピーされ、"--tempa=test --tempo=test_copy"とすれば、"カレントディレクトリ\test" の内容が "template\test_copy" にコピーされます。

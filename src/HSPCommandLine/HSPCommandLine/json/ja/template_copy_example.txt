@@ -1,0 +1,6 @@
+﻿- defaultテンプレートをコピーします。
+    hspcui template copy
+- test テンプレートをコピーします。
+    hspcui template copy test
+- 指定した templates ディレクトリから test テンプレートをコピーします。
+    hspcui template copy test --tmppath C:\templates

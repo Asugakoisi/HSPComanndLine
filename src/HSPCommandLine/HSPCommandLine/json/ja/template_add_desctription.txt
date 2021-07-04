@@ -1,0 +1,13 @@
+﻿使用法: hspcui template add <TEMPLATENAME> [options]
+
+引数:
+<TEMPLATENAME>    コピーされるテンプレートディレクトリ名
+
+オプション:
+-E                               hspcui 内で発生したエラーを無視して実行を続けます。
+-h, --help                       コマンド ラインのヘルプを表示します。
+-o, --tempo <NAME>               コピー先でのディレクトリ名を指定します。
+-s, --syspath <SYSTEM_DIR>       HSPシステムフォルダを指定します。
+-t, --tmppath <TEMPLATES_DIR>    templates フォルダを指定します。
+--nologo                         著作権情報を表示しません。
+--lang=<LANGAGE>                 実行時の言語を指定します。使用可能な値 ja、en。

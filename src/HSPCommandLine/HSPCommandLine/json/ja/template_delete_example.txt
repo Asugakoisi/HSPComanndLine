@@ -1,0 +1,6 @@
+﻿- defaultテンプレートを削除します。
+    hspcui template delete
+- test テンプレートを削除します。
+    hspcui template copy test
+- 指定した templates ディレクトリから test テンプレートを削除します。
+    hspcui template copy test --tmppath C:\templates

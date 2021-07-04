@@ -1,0 +1,13 @@
+﻿Usage: hspcui template copy <TEMPLATENAME> [options]
+
+argument:
+<TEMPLATENAME>    Template directory name to copy
+
+option:
+-E                               Ignore any errors that occur in hspcui and continue execution.
+-h, --help                       Displays command line help.
+-o, --tempo <NAME>               Specify the directory name of the copy destination.
+-s, --syspath <SYSTEM_DIR>       Specify the HSP system folder.
+-t, --tmppath <TEMPLATES_DIR>    Specifies the templates folder.
+--nologo                         Do not display copyright information.
+--lang=<LANGAGE>                 Specifies the language at runtime. Possible values ​​ja, en.

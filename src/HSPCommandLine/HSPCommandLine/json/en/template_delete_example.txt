@@ -1,0 +1,6 @@
+﻿- Delete the default template.
+    hspcui template delete
+- Delete the test template.
+    hspcui template copy test
+- Deletes the test template from the specified templates directory.
+    hspcui template copy test --tmppath C: \ templates

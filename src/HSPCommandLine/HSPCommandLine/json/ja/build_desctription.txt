@@ -1,0 +1,28 @@
+﻿使用法: hspcui build <SOURCE_FILE> [options]
+
+引数:
+<SOURCE_FILE>    コンパイルするファイルのパス。
+
+オプション:
+-a                         ソースコードの文字コードを自動判別します。
+-c                         HSP var2.6 としてコンパイルします。
+-C                         カレントディレクトリをソースファイルが存在するディレクトリに変更します。
+-d                         デバッグ情報を付与してコンパイルします。
+-D                         コンパイルの成果物のうち、AssemblyInfo.hsp と自動実行ファイル以外を削除します。
+-E                         hspcui 内で発生したエラーを無視して実行を続けます。
+-i                         ソースファイルが utf-8 であることを示します。
+-j                         ソースファイルが shift_jis であることを示します。
+-p                         プリプロセスのみを行います。
+-u                         ソースファイルをUTF-8にエンコードし、文字列データをUTF-8形式で出力します。
+-h, --help                 コマンド ラインのヘルプを表示します。
+-n, --notasminfo           AssemblyInfo.hsp ファイルを生成しません。
+-o, --outname <NAME>       出力する自動実行ファイル名かオブジェクトファイル(.ax)か strmap の名前を指定します。
+-t, --type <TYPE>          指定した形にコンパイルします。使用可能な値 ax、exe、strmap。
+--lang=<LANGAGE>           実行時の言語を指定します。使用可能な値 ja、en。
+--nologo                   著作権情報を表示しません。
+--newcmpmes                エラーコード付きのコンパイルメッセージを表示します。
+--syspath <SYSTEM_DIR>     HSPシステムフォルダを指定します。
+--compath <COMMON_DIR>     common フォルダを指定します。
+--rtmpath <RUNTIME_DIR>    runtime フォルダを指定します。
+--platform <PLATFORM>      プラットフォームを指定します。使用可能な値 x86、x64。
+--refname <REF_NAME>       表示するソースファイル名を変更します。

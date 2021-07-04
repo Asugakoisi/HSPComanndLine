@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "HSPCommandLine": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    },
+    "WSL 2": {
+      "commandName": "WSL2",
+      "commandLineArgs": "{OutDir}hspcui.dll"
+    }
+  }
+}

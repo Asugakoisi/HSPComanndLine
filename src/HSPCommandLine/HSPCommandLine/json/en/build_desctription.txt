@@ -1,0 +1,28 @@
+﻿Usage: hspcui build <SOURCE_FILE> [options]
+
+argument:
+<SOURCE_FILE>    The path to the file to compile.
+
+option:
+-a                         Automatically determine the character code of the source code.
+-c                         Compile as HSP var2.6.
+-C                         Change the current directory to the directory where the source files are located.
+-d                         Compile with debug information.
+-D                         Remove all compilation artifacts except AssemblyInfo.hsp and auto-executables.
+-E                         Ignore any errors that occur in hspcui and continue execution.
+-i                         Indicates that the source file is utf-8.
+-j                         Indicates that the source file is shift_jis.
+-p                         Do preprocessing only.
+-u                         Encodes the source file to UTF-8 and outputs the string data in UTF-8 format.
+-h, --help                 Displays command line help.
+-n, --notasminfo           Does not generate the AssemblyInfo.hsp file.
+-o, --outname <NAME>       Specify the name of the output autoexecutable file, object file (.ax), or strmap.
+-t, --type <TYPE>          Compile to the specified form. Possible values ​​ax, exe, strmap.
+--lang=<LANGAGE>           Specifies the language at runtime. Possible values ​​ja, en.
+--nologo                   Do not display copyright information.
+--newcmpmes                Displays a compile message with an error code.
+--syspath <SYSTEM_DIR>     Specify the HSP system folder.
+--compath <COMMON_DIR>     Specifies the common folder.
+--rtmpath <RUNTIME_DIR>    Specifies the runtime folder.
+--platform <PLATFORM>      Specifies the platform. Available values ​​x86, x64.
+--refname <REF_NAME>       Change the name of the source file to be displayed.

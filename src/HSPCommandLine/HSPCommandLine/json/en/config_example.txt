@@ -1,0 +1,4 @@
+﻿- Register the HSP system folder.
+    hspcui config system C: \ hsp36
+- Unregister the HSP system folder.
+    hspcui config system ""

@@ -1,0 +1,6 @@
+﻿- 普通に実行する。
+    hspcui run source.ax
+- オプション付きで実行する。
+    hspcui run source.ax -- "option"
+- ランタイムを表示する。
+    hspcui run source.ax -r0

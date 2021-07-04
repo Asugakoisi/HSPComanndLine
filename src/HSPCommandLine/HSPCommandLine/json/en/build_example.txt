@@ -1,0 +1,12 @@
+﻿- Compile normally.
+    hspcui build source.hsp -j
+- Automatically determines the character code of the source code and compiles it.
+    hspcui build source.hsp -a
+- Generate an auto-executable file.
+    hspcui build source.hsp -a -t exe
+- Generate strmap.
+    hspcui build source.hsp -a -t strmap
+- When you want to output character string data (AssemblyInfo.hsp, strmap, etc.) in UTF-8 format.
+    hspcui build source.hsp -u
+- Change the output file name.
+    hspcui build source.hsp -o test.hsp

@@ -1,0 +1,10 @@
+﻿[*.cs]
+
+# IDE0063: 単純な 'using' ステートメントを使用する
+csharp_prefer_simple_using_statement =true:silent
+
+# IDE0079: 不要な抑制を削除します
+dotnet_diagnostic.IDE0079.severity = none
+
+[*.{cs,vb}]
+dotnet_diagnostic.CA1827.severity=silent

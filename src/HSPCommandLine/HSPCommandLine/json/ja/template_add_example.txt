@@ -1,0 +1,4 @@
+﻿- test テンプレートを templates ディレクトリにコピーします。
+    hspcui template add test
+- test テンプレートを指定した templates ディレクトリにコピーします。
+    hspcui template add test --tmppath C:\templates

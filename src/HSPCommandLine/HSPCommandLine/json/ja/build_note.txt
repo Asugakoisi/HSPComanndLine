@@ -1,0 +1,2 @@
+﻿- Linux版では指定できないオプション。
+    -t|--type exe, -a, -j, -n|--notasminfo, --platform, --refname

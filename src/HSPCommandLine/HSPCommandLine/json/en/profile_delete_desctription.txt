@@ -1,0 +1,8 @@
+﻿Usage: hspcui profile delete <NAME>
+
+argument:
+<NAME>    The ID or profile name of the profile to delete.
+
+option:
+--help              Displays command line help.
+--lang=<LANGAGE>    Specifies the language at runtime. Possible values ​​ja, en.

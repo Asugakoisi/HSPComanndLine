@@ -1,0 +1,13 @@
+﻿Usage: hspcui build <SOURCE_FILE> [options] [-- <additional arguments>...]
+
+argument:
+<SOURCE_FILE>    The path of the ax file to execute.
+
+option:
+-r0                        Shows the runtime for the specified file.
+-E                         Ignore any errors that occur in hspcui and continue execution.
+-h, --help                 Displays command line help.
+--nologo                   Do not display copyright information.
+--syspath <SYSTEM_DIR>     Specify the HSP system folder.
+--rtmpath <RUNTIME_DIR>    Specifies the runtime folder.
+--lang=<LANGAGE>           Specifies the language at runtime. Possible values ​​ja, en.

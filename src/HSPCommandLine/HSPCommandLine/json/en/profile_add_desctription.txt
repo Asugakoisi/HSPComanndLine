@@ -1,0 +1,9 @@
+﻿Usage: hspcui profile add <NAME> <OPTIONS>
+
+argument:
+<NAME>       Profile name to register. It can be omitted.
+<OPTIONS>    Options to register.
+
+option:
+--help              Displays command line help.
+--lang=<LANGAGE>    Specifies the language at runtime. Possible values ​​ja, en.

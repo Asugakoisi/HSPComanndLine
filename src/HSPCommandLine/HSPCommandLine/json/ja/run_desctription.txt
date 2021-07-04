@@ -1,0 +1,13 @@
+﻿使用法: hspcui build <SOURCE_FILE> [options] [-- <additional arguments>...]
+
+引数:
+<SOURCE_FILE>    実行するaxファイルのパス。
+
+オプション:
+-r0                        指定されたファイルのランタイムを表示します。
+-E                         hspcui 内で発生したエラーを無視して実行を続けます。
+-h, --help                 コマンド ラインのヘルプを表示します。
+--nologo                   著作権情報を表示しません。
+--syspath <SYSTEM_DIR>     HSPシステムフォルダを指定します。
+--rtmpath <RUNTIME_DIR>    runtime フォルダを指定します。
+--lang=<LANGAGE>           実行時の言語を指定します。使用可能な値 ja、en。
