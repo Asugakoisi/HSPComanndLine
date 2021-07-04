@@ -286,7 +286,7 @@ namespace HspcuiBase.Compile
             return res;
         }
 
-        public static string GetRuntime(string axName)
+        public static string GetRuntime(string axName, string systemDirectoryPath = "")
         {
             var runtimeName = new byte[Util.MAX_PATH];
             Hsc3_getruntime(runtimeName, Encoding.GetEncoding("Shift_JIS").GetBytes(axName), 0, 0);

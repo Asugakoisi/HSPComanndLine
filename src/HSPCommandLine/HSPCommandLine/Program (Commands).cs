@@ -325,7 +325,7 @@ namespace HSPCommandLine
             }
             else
             {
-                string runtimeName = Compile.GetRuntime(!string.IsNullOrEmpty(outputFileName) ? outputFileName : sourceFilePath);
+                string runtimeName = Compile.GetRuntime(!string.IsNullOrEmpty(outputFileName) ? outputFileName : sourceFilePath, sysDirectoryPath);
                 Console.WriteLine($"Runtime[{runtimeName}]");
             }
         }

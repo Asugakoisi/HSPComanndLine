@@ -512,7 +512,7 @@ namespace HSPCommandLine
                     // ランタイム表示
                     else if (isOutputRuntimeName)
                     {
-                        string runtimeName = Compile.GetRuntime(!string.IsNullOrEmpty(outputFileName) ? outputFileName : sourceFilePath);
+                        string runtimeName = Compile.GetRuntime(!string.IsNullOrEmpty(outputFileName) ? outputFileName : sourceFilePath, sysDirectoryPath);
                         Console.WriteLine($"Runtime[{runtimeName}]");
                     }
                 }
@@ -526,7 +526,7 @@ namespace HSPCommandLine
             // -r0 オプション
             else if (isOutputRuntimeName)
             {
-                string runtimeName = Compile.GetRuntime(!string.IsNullOrEmpty(outputFileName) ? outputFileName : sourceFilePath);
+                string runtimeName = Compile.GetRuntime(!string.IsNullOrEmpty(outputFileName) ? outputFileName : sourceFilePath, sysDirectoryPath);
                 Console.WriteLine($"Runtime[{runtimeName}]");
             }
             // -D オプション

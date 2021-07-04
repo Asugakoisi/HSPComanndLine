@@ -67,6 +67,7 @@ namespace HspcuiBase.Compile
                 else
                     axName = Path.ChangeExtension(SourceFilePath, "strmap");
                 using var process1 = new Process();
+                startInfo.FileName = $"{SystemDirectoryPath}{startInfo.FileName}";
                 startInfo.Arguments = arg + SourceFilePath;
                 process1.StartInfo = startInfo;
                 res = !process1.Start();
@@ -93,6 +94,7 @@ namespace HspcuiBase.Compile
             else
                 axName = Path.ChangeExtension(SourceFilePath, "ax");
             using var process = new Process();
+            startInfo.FileName = $"{SystemDirectoryPath}{startInfo.FileName}";
             startInfo.Arguments = arg + SourceFilePath;
             process.StartInfo = startInfo;
             res = !process.Start();
@@ -153,15 +155,17 @@ namespace HspcuiBase.Compile
             }
         }
 
-        public static string GetRuntime(string axName)
+        public static string GetRuntime(string axName, string systemDirectoryPath = "")
         {
+            if (!systemDirectoryPath.EndsWith(Path.DirectorySeparatorChar))
+                systemDirectoryPath += Path.DirectorySeparatorChar;
             using var process = new Process();
             ProcessStartInfo startInfo1 = new()
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 CreateNoWindow = true,
-                FileName = "hspcmp",
+                FileName = $"{systemDirectoryPath}hspcmp",
                 Arguments = axName + " -r0"
             };
             process.StartInfo = startInfo1;
